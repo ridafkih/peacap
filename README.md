@@ -15,7 +15,8 @@
 
 ## Prerequisites
 
-You **must** have Python installed, and available at the `python` command on Windows, and `python3` on Windows & Linux.
+- You **must** have Python installed, and available at the `python` command on Windows, and `python3` on Windows & Linux.
+- If `scapy`, the dependent python library isn't successfully installed when you install the `peacap` dependency, you can optionally install `scapy` using pip.
 
 ## Installation
 

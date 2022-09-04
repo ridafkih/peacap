@@ -4,6 +4,7 @@
   "description": "Cross-platform Python-based NPM module for sniffing system-wide TCP packets.",
   "main": "dist/index.js",
   "scripts": {
+    "postinstall": "python3 -m pip install scapy",
     "build": "tsc --declaration && tsc-alias"
   },
   "keywords": [
