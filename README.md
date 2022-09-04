@@ -13,8 +13,6 @@
 </div>
 <hr>
 
-![example usage](https://user-images.githubusercontent.com/9158485/184518260-c6961cdd-e665-484c-ae83-e3896f604bd4.png)
-
 ## Prerequisites
 
 You **must** have Python installed, and available at the `python` command on Windows, and `python3` on Windows & Linux.
@@ -39,16 +37,15 @@ Usage is simple, simply instantiate the `PacketSniffer` constructor, and observe
 import { PacketSniffer } from "sniff";
 
 const sniffer = new PacketSniffer();
-sniffer.on("packet", console.log);
-/**
- * {
- *   source: "10.0.0.2",
- *   destination: "10.0.0.3",
- *   outgoing: true,
- *   size: 420,
- *   packet: <Buffer 00 00 00 ...>
- * }
- */
+sniffer.on("packet", console.log); /**
+                                   * {
+                                   *   source: "10.0.0.2",
+                                   *   destination: "10.0.0.3",
+                                   *   outgoing: true,
+                                   *   size: 420,
+                                   *   packet: <Buffer 00 00 00 ...>
+                                   * }
+                                   */
 ```
 
 ## Contribute
