@@ -1,4 +1,3 @@
-from ipaddress import ip_address
 from scapy.all import sniff, get_if_addr, conf
 
 ip_address_local = get_if_addr(conf.iface)
