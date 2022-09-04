@@ -1,10 +1,24 @@
-import { fileURLToPath } from "node:url";
 import { join, dirname } from "node:path";
 import { EventEmitter } from "node:events";
 import { PythonShell } from "python-shell";
+import { ChunkData } from "@/@types/chunk";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
 const FILE_PATH = join(__dirname, "../..", "bridge", "main.py");
+
+interface PacketSnifferEvents {
+  ready: () => void;
+  packet: (chunk: ChunkData) => void;
+}
+
+export declare interface PacketSniffer {
+  on<U extends keyof PacketSnifferEvents>(
+    event: U, listener: PacketSnifferEvents[U]
+  ): this;
+
+  emit<U extends keyof PacketSnifferEvents>(
+    event: U, ...args: Parameters<PacketSnifferEvents[U]>
+  ): boolean;
+}
 
 export class PacketSniffer extends EventEmitter {
   constructor() {
@@ -14,13 +28,13 @@ export class PacketSniffer extends EventEmitter {
 		shell.on("message", this._handleChunk.bind(this));
   }
 
-  _handleChunk(chunk) {
+  _handleChunk(chunk: string) {
 		if (chunk === "1") return this.emit("ready");
 		
     const [source, destination, outgoing, packet] = chunk.split(",");
 		const buffer = Buffer.from(String(packet), "hex");
 
-    const data = {
+    const data: ChunkData = {
       source,
       destination,
       outgoing: outgoing === "1",
