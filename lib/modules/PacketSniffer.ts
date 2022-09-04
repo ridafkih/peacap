@@ -1,4 +1,4 @@
-import { join, dirname } from "node:path";
+import { join } from "node:path";
 import { EventEmitter } from "node:events";
 import { PythonShell } from "python-shell";
 import { ChunkData } from "@/@types/chunk";
