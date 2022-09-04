@@ -15,7 +15,7 @@
     "network",
     "sniff"
   ],
-  "author": "",
+  "author": "Rida F'kih",
   "license": "ISC",
   "dependencies": {
     "python-shell": "^3.0.1"
