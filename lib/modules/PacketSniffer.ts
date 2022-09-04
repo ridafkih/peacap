@@ -25,10 +25,10 @@ export class PacketSniffer extends EventEmitter {
     super();
 
     const shell = new PythonShell(FILE_PATH);
-		shell.on("message", this._handleChunk.bind(this));
+		shell.on("message", this.handleChunk.bind(this));
   }
 
-  _handleChunk(chunk: string) {
+  private handleChunk(chunk: string) {
 		if (chunk === "1") return this.emit("ready");
 		
     const [source, destination, outgoing, packet] = chunk.split(",");
