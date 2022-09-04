@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>Sniff</h1>
+  <h1>Peacap</h1>
   <p>Cross-platform Python-based NPM module for sniffing system-wide TCP packets.</p>
   	<span>
 		<a href="#prerequisites">Prerequisites</a>
@@ -22,11 +22,11 @@ You **must** have Python installed, and available at the `python` command on Win
 Simply install using your favourite Node.js package manager.
 
 ```bash
-yarn add sniff
+yarn add peacap
 ```
 
 ```bash
-npm install sniff
+npm install peacap
 ```
 
 ## Usage
@@ -34,18 +34,19 @@ npm install sniff
 Usage is simple, simply instantiate the `PacketSniffer` constructor, and observe.
 
 ```ts
-import { PacketSniffer } from "sniff";
+import { PacketSniffer } from "peacap";
 
 const sniffer = new PacketSniffer();
-sniffer.on("packet", console.log); /**
-                                   * {
-                                   *   source: "10.0.0.2",
-                                   *   destination: "10.0.0.3",
-                                   *   outgoing: true,
-                                   *   size: 420,
-                                   *   packet: <Buffer 00 00 00 ...>
-                                   * }
-                                   */
+sniffer.on("packet", console.log);
+/**
+ * {
+ *   source: "10.0.0.2",
+ *   destination: "10.0.0.3",
+ *   outgoing: true,
+ *   size: 420,
+ *   packet: <Buffer 00 00 00 ...>
+ * }
+ */
 ```
 
 ## Contribute

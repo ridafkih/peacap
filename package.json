@@ -1,13 +1,13 @@
 {
-  "name": "sniff",
+  "name": "peacap",
   "type": "module",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Cross-platform Python-based NPM module for sniffing system-wide TCP packets.",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc --declaration && tsc-alias"
   },
-  "keywords": [],
+  "keywords": ["pcap", "sniff packet", "packet sniffer", "packet", "network", "sniff"],
   "author": "",
   "license": "ISC",
   "dependencies": {
