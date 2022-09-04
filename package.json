@@ -1,6 +1,6 @@
 {
   "name": "peacap",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Cross-platform Python-based NPM module for sniffing system-wide TCP packets.",
   "main": "dist/index.js",
   "scripts": {
